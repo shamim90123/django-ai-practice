@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>University List</h1>
+    <a href="{% url 'add_university' %}" class="btn btn-primary" style="float: right; margin-bottom: 20px;">Add New</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for university in universities %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ university.name }}</td>
+                <td>{{ university.location }}</td>
+                <td>
+                    <a href="{% url 'edit_university' university.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{% url 'delete_university' university.pk %}" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No universities found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

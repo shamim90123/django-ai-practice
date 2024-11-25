@@ -31,4 +31,9 @@ urlpatterns = [
     path('home/', views.home, name='home'),  # Home page
     path('about/', views.about, name='about'),  # About page (if you have one)
     path('admin/', admin.site.urls),  # Admin page
+    path('register/', views.register, name='register'),
+    path('universities/', views.university_list, name='university_list'),
+    path('universities/add/', views.add_university, name='add_university'),
+    path('universities/edit/<int:pk>/', views.edit_university, name='edit_university'),
+    path('universities/delete/<int:pk>/', views.delete_university, name='delete_university'),
 ]

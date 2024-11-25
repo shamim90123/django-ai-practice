@@ -9,3 +9,11 @@ class Student(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+class University(models.Model):
+    name = models.CharField(max_length=255, unique=True)  # University name
+    location = models.CharField(max_length=255)  # Location of the university
+    established_date = models.DateField()  # Date when the university was established
+
+    def __str__(self):
+        return self.name
