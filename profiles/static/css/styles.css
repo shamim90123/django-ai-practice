@@ -1,0 +1,139 @@
+/* static/css/styles.css */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fc; /* Soft background color */
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Wrapper for sidebar and content */
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px; /* Width of the sidebar */
+    background-color: #2c3e50; /* Dark background color */
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #3498db; /* Highlight color on hover */
+}
+
+/* Content Wrapper Styles (to push the content right of sidebar) */
+.content-wrapper {
+    margin-left: 250px; /* Ensure content area doesn’t overlap with sidebar */
+    padding: 20px;
+    flex: 1;
+    background-color: white;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 250px; /* This ensures the header starts from the end of the sidebar */
+    width: calc(100% - 250px); /* Make header span the rest of the screen */
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-left h1 {
+    font-size: 24px;
+}
+
+.header-right .btn-login {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.header-right .btn-login:hover {
+    background-color: #c0392b;
+}
+
+/* Content Styles */
+.content {
+    padding-top: 60px; /* Give space below the fixed header */
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+    }
+
+    .header {
+        left: 0;
+        width: 100%;
+    }
+
+    .header-left h1 {
+        font-size: 18px;
+    }
+
+    .header-right .btn-login {
+        font-size: 14px;
+    }
+}

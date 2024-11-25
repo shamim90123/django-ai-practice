@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="/admin/">Admin</a></li>
+                <!-- Add other menu items here -->
+            </ul>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Fixed Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Student Profile</h1>
+                </div>
+                <div class="header-right">
+                    {{ user.username }}  <a href="{% url 'logout' %}" class="btn-login">Logout</a>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
