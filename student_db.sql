@@ -14,6 +14,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Dumping database structure for student_db
+CREATE DATABASE IF NOT EXISTS `student_db` /*!40100 DEFAULT CHARACTER SET armscii8 COLLATE armscii8_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `student_db`;
+
 -- Dumping structure for table student_db.auth_group
 CREATE TABLE IF NOT EXISTS `auth_group` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -47,9 +52,9 @@ CREATE TABLE IF NOT EXISTS `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table student_db.auth_permission: ~28 rows (approximately)
+-- Dumping data for table student_db.auth_permission: ~0 rows (approximately)
 INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALUES
 	(1, 'Can add log entry', 1, 'add_logentry'),
 	(2, 'Can change log entry', 1, 'change_logentry'),
@@ -78,7 +83,11 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 	(25, 'Can add student', 7, 'add_student'),
 	(26, 'Can change student', 7, 'change_student'),
 	(27, 'Can delete student', 7, 'delete_student'),
-	(28, 'Can view student', 7, 'view_student');
+	(28, 'Can view student', 7, 'view_student'),
+	(29, 'Can add university', 8, 'add_university'),
+	(30, 'Can change university', 8, 'change_university'),
+	(31, 'Can delete university', 8, 'delete_university'),
+	(32, 'Can view university', 8, 'view_university');
 
 -- Dumping structure for table student_db.auth_user
 CREATE TABLE IF NOT EXISTS `auth_user` (
@@ -95,12 +104,14 @@ CREATE TABLE IF NOT EXISTS `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table student_db.auth_user: ~0 rows (approximately)
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-	(1, 'pbkdf2_sha256$870000$36FKosGECxRGTYn7yxb0u3$vND1zrJvLAM6oJdq/5WMAeF8nUGJ95G5l0e5BA2kXRk=', '2024-11-25 00:42:27.748231', 1, 'admin', '', '', 'mailto:admin@gmail.com', 1, 1, '2024-11-24 23:10:01.328245'),
-	(2, 'pbkdf2_sha256$870000$fI6R3aPMPwMteplzTMuBzR$xmgRk4Rni5V2OKgcWQ8bBsqNg5SMIWMnVA+BkHDuo/w=', '2024-11-25 00:42:32.548822', 1, 'shamim901', '', '', 'mailto:shamim@gmail.com', 1, 1, '2024-11-25 00:14:50.397110');
+	(1, 'pbkdf2_sha256$870000$36FKosGECxRGTYn7yxb0u3$vND1zrJvLAM6oJdq/5WMAeF8nUGJ95G5l0e5BA2kXRk=', '2024-11-25 10:04:01.043197', 1, 'admin', '', '', 'mailto:admin@gmail.com', 1, 1, '2024-11-24 23:10:01.328245'),
+	(2, 'pbkdf2_sha256$870000$fI6R3aPMPwMteplzTMuBzR$xmgRk4Rni5V2OKgcWQ8bBsqNg5SMIWMnVA+BkHDuo/w=', '2024-11-25 08:37:35.608410', 1, 'shamim901', '', '', 'mailto:shamim@gmail.com', 1, 1, '2024-11-25 00:14:50.397110'),
+	(3, 'pbkdf2_sha256$870000$fI6R3aPMPwMteplzTMuBzR$xmgRk4Rni5V2OKgcWQ8bBsqNg5SMIWMnVA+BkHDuo/w=', '2024-11-25 11:16:59.227194', 0, 'qejyluqeb', '', '', '', 0, 1, '2024-11-25 10:37:39.995946'),
+	(4, 'pbkdf2_sha256$870000$fI6R3aPMPwMteplzTMuBzR$xmgRk4Rni5V2OKgcWQ8bBsqNg5SMIWMnVA+BkHDuo/w=', '2024-11-25 10:44:13.971694', 0, 'dolydudyde', '', '', '', 0, 1, '2024-11-25 10:43:26.937821');
 
 -- Dumping structure for table student_db.auth_user_groups
 CREATE TABLE IF NOT EXISTS `auth_user_groups` (
@@ -159,9 +170,9 @@ CREATE TABLE IF NOT EXISTS `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table student_db.django_content_type: ~7 rows (approximately)
+-- Dumping data for table student_db.django_content_type: ~0 rows (approximately)
 INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 	(1, 'admin', 'logentry'),
 	(3, 'auth', 'group'),
@@ -169,6 +180,7 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 	(4, 'auth', 'user'),
 	(5, 'contenttypes', 'contenttype'),
 	(7, 'profiles', 'student'),
+	(8, 'profiles', 'university'),
 	(6, 'sessions', 'session');
 
 -- Dumping structure for table student_db.django_migrations
@@ -178,9 +190,9 @@ CREATE TABLE IF NOT EXISTS `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table student_db.django_migrations: ~5 rows (approximately)
+-- Dumping data for table student_db.django_migrations: ~0 rows (approximately)
 INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 	(1, 'contenttypes', '0001_initial', '2024-11-24 23:03:07.945462'),
 	(2, 'auth', '0001_initial', '2024-11-24 23:03:08.209627'),
@@ -200,7 +212,8 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 	(16, 'auth', '0011_update_proxy_permissions', '2024-11-24 23:03:08.584006'),
 	(17, 'auth', '0012_alter_user_first_name_max_length', '2024-11-24 23:03:08.617097'),
 	(18, 'profiles', '0001_initial', '2024-11-24 23:03:08.643407'),
-	(19, 'sessions', '0001_initial', '2024-11-24 23:03:08.663768');
+	(19, 'sessions', '0001_initial', '2024-11-24 23:03:08.663768'),
+	(20, 'profiles', '0002_university', '2024-11-25 11:11:28.959574');
 
 -- Dumping structure for table student_db.django_session
 CREATE TABLE IF NOT EXISTS `django_session` (
@@ -228,6 +241,18 @@ CREATE TABLE IF NOT EXISTS `profiles_student` (
 -- Dumping data for table student_db.profiles_student: ~0 rows (approximately)
 INSERT INTO `profiles_student` (`id`, `first_name`, `last_name`, `email`, `date_of_birth`, `enrollment_date`) VALUES
 	(1, 'Shamim', 'Reza', 'mailto:shamim@gmail.com', '2024-01-04', '2024-11-24');
+
+-- Dumping structure for table student_db.profiles_university
+CREATE TABLE IF NOT EXISTS `profiles_university` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE armscii8_bin NOT NULL,
+  `location` varchar(255) COLLATE armscii8_bin NOT NULL,
+  `established_date` date NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=armscii8 COLLATE=armscii8_bin;
+
+-- Dumping data for table student_db.profiles_university: ~0 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
