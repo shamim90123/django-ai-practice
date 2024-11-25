@@ -11,9 +11,10 @@ class Student(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 class University(models.Model):
-    name = models.CharField(max_length=255, unique=True)  # University name
-    location = models.CharField(max_length=255)  # Location of the university
-    established_date = models.DateField()  # Date when the university was established
+    name = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    established_year = models.IntegerField()
+    website = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name

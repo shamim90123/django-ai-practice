@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from .models import University
 from .forms import UniversityForm
 
 @login_required
@@ -29,21 +30,22 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 def university_list(request):
-    universities = University.objects.all()  # Fetch all university data
-    return render(request, 'university/university_list.html', {'universities': universities})
+    universities = University.objects.all()
+    # return render(request, 'profiles.templates.profiles.university.university_list.html', {'universities': universities})
+    return render(request, 'profiles/university/university_list.html', {'universities': universities})
 
-def add_university(request):
+def university_create(request):
     if request.method == 'POST':
         form = UniversityForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('university_list')  # Redirect back to the list page
+            return redirect('university_list')
     else:
         form = UniversityForm()
-    return render(request, 'add_university.html', {'form': form})
+    return render(request, 'profiles/university/university_form.html', {'form': form})
 
-def edit_university(request, pk):
-    university = get_object_or_404(University, pk=pk)
+def university_update(request, id):
+    university = get_object_or_404(University, id=id)
     if request.method == 'POST':
         form = UniversityForm(request.POST, instance=university)
         if form.is_valid():
@@ -51,11 +53,11 @@ def edit_university(request, pk):
             return redirect('university_list')
     else:
         form = UniversityForm(instance=university)
-    return render(request, 'add_university.html', {'form': form})
+    return render(request, 'profiles/university/university_form.html', {'form': form})
 
-def delete_university(request, pk):
-    university = get_object_or_404(University, pk=pk)
+def university_delete(request, id):
+    university = get_object_or_404(University, id=id)
     if request.method == 'POST':
         university.delete()
         return redirect('university_list')
-    return render(request, 'confirm_delete.html', {'university': university})
+    return render(request, 'profiles/university/university_confirm_delete.html', {'university': university})

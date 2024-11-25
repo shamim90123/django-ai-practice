@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Add New University</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">University Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ form.name.value }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" value="{{ form.location.value }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="established_year" class="form-label">Established Year</label>
+                    <input type="number" class="form-control" id="established_year" name="established_year" value="{{ form.established_year.value }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="website" class="form-label">Website</label>
+                    <input type="url" class="form-control" id="website" name="website" value="{{ form.website.value }}">
+                </div>
+                <button type="submit" class="btn btn-success">Save University</button>
+                <a href="{% url 'university_list' %}" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
