@@ -48,6 +48,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'profiles.middleware.CustomMiddleware',
+    # 'profiles.middleware.IPBlockerMiddleware',
+    'profiles.middleware.LoginRedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'student_profile.urls'
@@ -130,7 +133,5 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL = 'login'
-
-LOGIN_REDIRECT_URL = '/' 
 
 LOGIN_REDIRECT_URL = 'home' 
