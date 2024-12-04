@@ -121,3 +121,8 @@ Copy code
 3. Add screenshots or GIFs of the application for better clarity.
 
 Would you like me to add specific sections or generate a `LICENSE` file?
+
+1. authentication = done
+2. authorization = 90% done
+3. crud  = done
+4. responsive = done

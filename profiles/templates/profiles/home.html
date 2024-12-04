@@ -1,6 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Welcome to the Student Profile System</h1>
-  <p>You are logged in as {{ user.username }}</p>
+    <div class="container mt-5">
+        <!-- Page Header -->
+        <div class="text-center mb-4">
+            <h1 class="display-4">Welcome to the Student Profile System</h1>
+            <p class="lead">Manage and update your student profile with ease. Stay on top of your academic journey.</p>
+        </div>
+
+        <!-- User Info -->
+        <div class="text-center mb-4">
+            <p class="h4">You are logged in as <strong>{{ user.username }}</strong></p>
+        </div>
+
+        <!-- Action Cards Section -->
+        <div class="row justify-content-center">
+            <!-- Card for Profile Management -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-person-circle" style="font-size: 3rem; color: #007bff;"></i>
+                        <h5 class="card-title mt-3">Manage Profile</h5>
+                        <p class="card-text">Edit your personal information, upload documents, and manage your preferences.</p>
+                        <a href="" class="btn btn-primary">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card for Academic Progress -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-graph-up" style="font-size: 3rem; color: #28a745;"></i>
+                        <h5 class="card-title mt-3">Academic Progress</h5>
+                        <p class="card-text">Track your academic performance, grades, and upcoming exams.</p>
+                        <a href="" class="btn btn-success">View Progress</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card for Notifications -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-bell" style="font-size: 3rem; color: #ffc107;"></i>
+                        <h5 class="card-title mt-3">Notifications</h5>
+                        <p class="card-text">Stay up to date with important announcements, deadlines, and reminders.</p>
+                        <a href="" class="btn btn-warning">View Notifications</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="text-center mt-5">
+            <p class="text-muted">© 2024 Student Profile System. All rights reserved.</p>
+        </div>
+    </div>
 {% endblock %}
