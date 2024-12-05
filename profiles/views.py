@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .models import University
 from .forms import UniversityForm
+from .utils import analyze_sentiment
 
 @login_required
 def home(request):
@@ -61,3 +62,10 @@ def university_delete(request, id):
         university.delete()
         return redirect('university_list')
     return render(request, 'profiles/university/university_confirm_delete.html', {'university': university})
+
+def sentiment_view(request):
+    if request.method == "POST":
+        text = request.POST.get("text")
+        result = analyze_sentiment(text)  # Get polarity and subjectivity
+        return render(request, "sentiment.html", {"text": text, "result": result})
+    return render(request, "sentiment.html")

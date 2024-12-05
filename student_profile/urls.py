@@ -20,6 +20,8 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from profiles import views  # Assuming the home page is in the profiles app
 
+# from .views import sentiment_view
+
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
 #       path('', include('profiles.urls')),  # Include the 'profiles' app's URLs
@@ -36,4 +38,5 @@ urlpatterns = [
     path('university/create/', views.university_create, name='university_create'),  # Create a university
     path('university/<int:id>/update/', views.university_update, name='university_update'),  # Update a university
     path('university/<int:id>/delete/', views.university_delete, name='university_delete'),  # Delete a university
+    path('sentiment/', views.sentiment_view, name='sentiment'),
 ]

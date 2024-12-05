@@ -126,3 +126,5 @@ Would you like me to add specific sections or generate a `LICENSE` file?
 2. authorization = 90% done
 3. crud  = done
 4. responsive = done
+5. redesign as large application = ongoing
+6. sample test of AI = ongoing

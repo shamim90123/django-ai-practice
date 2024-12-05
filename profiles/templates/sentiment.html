@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <textarea name="text" rows="5" cols="50" placeholder="Enter text"></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+        <h2>Sentiment Analysis Result:</h2>
+        <p><strong>Text:</strong> {{ text }}</p>
+        <p><strong>Sentiment Polarity:</strong> {{ result.polarity }}</p>
+        <p><strong>Sentiment Subjectivity:</strong> {{ result.subjectivity }}</p>
+    {% endif %}
+
+    <!-- {% if result %}
+        <h2>Result</h2>
+        <p>Text: {{ text }}</p>
+        <p>Sentiment: {{ result.label }}</p>
+        <p>Confidence: {{ result.score|floatformat:2 }}</p>
+    {% endif %} -->
+</body>
+</html>
