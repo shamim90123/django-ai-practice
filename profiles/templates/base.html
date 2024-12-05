@@ -46,10 +46,25 @@
             width: 100%;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
         .header-left h1 {
             margin: 0;
             font-size: 1.5rem;
             font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-right: 15px;
         }
 
         .header-right {
@@ -132,6 +147,10 @@
 
         /* Media Queries for responsiveness */
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
             .sidebar {
                 transform: translateX(-250px);
             }
@@ -145,38 +164,6 @@
                 width: 100%;
                 margin-top: 80px;
             }
-
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: transparent;
-                border: none;
-                font-size: 30px;
-                color: #007bff;
-                z-index: 200;
-            }
-
-            .sidebar ul {
-                padding-top: 50px;
-            }
-        }
-
-        /* Desktop specific adjustments */
-        @media (min-width: 769px) {
-            .menu-toggle {
-                display: none;
-            }
-
-            .header-right {
-                justify-content: flex-end;
-            }
-
-            .content-wrapper {
-                margin-left: 250px;
-            }
         }
     </style>
 </head>
@@ -186,6 +173,9 @@
         <!-- Fixed Header -->
         <header class="header">
             <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="bi bi-list"></i>
+                </button>
                 <h1>Student Profile</h1>
             </div>
             <div class="header-right">
@@ -198,7 +188,7 @@
         <div class="sidebar" id="sidebar">
             <ul>
                 <li><a href="{% url 'home' %}"><i class="bi bi-house-door"></i> Home</a></li>
-                <li><a href="{% url 'university_list' %}"><i class="bi bi-university"></i> University List</a></li>
+                <li><a href="{% url 'university_list' %}"><i class="bi bi-book"></i> University List</a></li>
                 <li><a href="{% url 'about' %}"><i class="bi bi-info-circle"></i> About</a></li>
                 <li><a href="/admin/"><i class="bi bi-person-lock"></i> Super Admin</a></li>
             </ul>
@@ -217,11 +207,9 @@
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
-        const contentWrapper = document.querySelector('.content-wrapper');
 
         menuToggle.addEventListener('click', () => {
             sidebar.classList.toggle('open');
-            contentWrapper.classList.toggle('shifted');
         });
     </script>
 
