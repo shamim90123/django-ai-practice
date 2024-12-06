@@ -6,6 +6,9 @@ from django.contrib import messages
 from .models import University
 from .forms import UniversityForm
 from .utils import analyze_sentiment
+from django.http import JsonResponse
+from .services import FaceRecognitionService
+
 
 @login_required
 def home(request):
@@ -69,3 +72,21 @@ def sentiment_view(request):
         result = analyze_sentiment(text)  # Get polarity and subjectivity
         return render(request, "sentiment.html", {"text": text, "result": result})
     return render(request, "sentiment.html")
+
+
+def recognize_face(request):
+    if request.method == 'POST' and request.FILES.get('image'):
+        image = request.FILES['image']
+        with open('temp_image.jpg', 'wb+') as temp_file:
+            for chunk in image.chunks():
+                temp_file.write(chunk)
+
+        student, error = FaceRecognitionService.match_face('temp_image.jpg')
+
+        if student:
+            return render(request, "face.html", {'status': 'success', 'student': student.name})
+        else:
+            return render(request, "face.html", {'status': 'error', 'message': error})
+
+    # return JsonResponse({'status': 'error', 'message': 'Invalid request'})
+    return render(request, 'face.html')

@@ -39,4 +39,5 @@ urlpatterns = [
     path('university/<int:id>/update/', views.university_update, name='university_update'),  # Update a university
     path('university/<int:id>/delete/', views.university_delete, name='university_delete'),  # Delete a university
     path('sentiment/', views.sentiment_view, name='sentiment'),
+     path('recognize-face/', views.recognize_face, name='recognize_face'),
 ]
