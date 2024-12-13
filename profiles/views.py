@@ -9,6 +9,12 @@ from .utils import analyze_sentiment
 from django.http import JsonResponse
 from .services import FaceRecognitionService
 
+#  Add the following import statements for age and gender prediction
+from .forms import AgeGenderPrediction
+from .services import AgeGenderPredictionService
+import os
+
+
 
 @login_required
 def home(request):
@@ -90,3 +96,28 @@ def recognize_face(request):
 
     # return JsonResponse({'status': 'error', 'message': 'Invalid request'})
     return render(request, 'face.html')
+
+def recognize_age_gender(request):
+    if request.method == 'POST':
+        form = AgeGenderPrediction(request.POST, request.FILES)
+        if form.is_valid():
+            uploaded_image = form.save()  # Save the image
+            image_path = uploaded_image.image.path
+
+            # Perform age and gender prediction
+            try:
+                prediction = AgeGenderPredictionService.predict_age_gender(image_path)
+                context = {
+                    "form": form,
+                    "uploaded_image": uploaded_image,
+                    "prediction": prediction,
+                }
+            except ValueError as e:
+                context = {"form": form, "error": str(e)}
+
+            return render(request, "age_gender.html", context)
+
+    else:
+        form = AgeGenderPrediction()
+
+    return render(request, "age_gender.html", {"form": form})

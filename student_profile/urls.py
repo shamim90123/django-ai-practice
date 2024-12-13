@@ -27,6 +27,12 @@ from profiles import views  # Assuming the home page is in the profiles app
 #       path('', include('profiles.urls')),  # Include the 'profiles' app's URLs
 # ]
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+# Add this at the end of the URL patterns to serve media files
+
 urlpatterns = [
     path('', auth_views.LoginView.as_view(), name='login'),  # Login page
     path('logout/', views.custom_logout, name='logout'),  # Logout page
@@ -39,5 +45,9 @@ urlpatterns = [
     path('university/<int:id>/update/', views.university_update, name='university_update'),  # Update a university
     path('university/<int:id>/delete/', views.university_delete, name='university_delete'),  # Delete a university
     path('sentiment/', views.sentiment_view, name='sentiment'),
-     path('recognize-face/', views.recognize_face, name='recognize_face'),
+    path('recognize-face/', views.recognize_face, name='recognize_face'),
+    path('recognize-age-gender/', views.recognize_age_gender, name='recognize_age_gender'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

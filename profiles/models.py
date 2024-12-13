@@ -39,3 +39,10 @@ class StudentProfile(models.Model):
                 self.face_encoding = encoding.tobytes()
 
         super().save(*args, **kwargs)
+
+class AgeGender(models.Model):
+    image = models.ImageField(upload_to='age_gender_prediction/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Image {self.id} - {self.image.name}"
