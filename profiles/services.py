@@ -3,6 +3,8 @@ import numpy as np
 from .models import StudentProfile
 import cv2
 
+
+# age gender prediction start here
 # Age and Gender Labels
 AGE_RANGES = ['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
 GENDER_LIST = ['Male', 'Female']
@@ -16,6 +18,7 @@ GENDER_PROTO = "./ai_models/gender_deploy.prototxt"
 # Load networks
 age_net = cv2.dnn.readNetFromCaffe(AGE_PROTO, AGE_MODEL)
 gender_net = cv2.dnn.readNetFromCaffe(GENDER_PROTO, GENDER_MODEL)
+# age gender prediction end here
 
 
 class FaceRecognitionService:

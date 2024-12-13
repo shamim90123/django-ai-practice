@@ -3,17 +3,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from .models import University
-from .forms import UniversityForm
-from .utils import analyze_sentiment
-from django.http import JsonResponse
-from .services import FaceRecognitionService
-
-#  Add the following import statements for age and gender prediction
-from .forms import AgeGenderPrediction
-from .services import AgeGenderPredictionService
 import os
 
+from .utils import analyze_sentiment
+from .models import University
+from .forms import AgeGenderPrediction
+from .forms import UniversityForm
+from .services import AgeGenderPredictionService
+from .services import FaceRecognitionService
 
 
 @login_required
@@ -79,7 +76,6 @@ def sentiment_view(request):
         return render(request, "sentiment.html", {"text": text, "result": result})
     return render(request, "sentiment.html")
 
-
 def recognize_face(request):
     if request.method == 'POST' and request.FILES.get('image'):
         image = request.FILES['image']
@@ -94,7 +90,6 @@ def recognize_face(request):
         else:
             return render(request, "face.html", {'status': 'error', 'message': error})
 
-    # return JsonResponse({'status': 'error', 'message': 'Invalid request'})
     return render(request, 'face.html')
 
 def recognize_age_gender(request):
