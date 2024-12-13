@@ -127,4 +127,7 @@ Would you like me to add specific sections or generate a `LICENSE` file?
 3. crud  = done
 4. responsive = done
 5. redesign as large application = ongoing
-6. sample test of AI = ongoing
+6. Sentiment Analysis = done
+7. Face Recognition = done
+8. Age and Gender Prediction = done
+9. live camera for face recognition, age, gender = to do
