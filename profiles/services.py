@@ -8,10 +8,10 @@ AGE_RANGES = ['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-
 GENDER_LIST = ['Male', 'Female']
 
 # Load pre-trained models from models folder
-AGE_MODEL = "./age_net.caffemodel"
-AGE_PROTO = "./age_deploy.prototxt"
-GENDER_MODEL = "./gender_net.caffemodel"
-GENDER_PROTO = "./gender_deploy.prototxt"
+AGE_MODEL = "./ai_models/age_net.caffemodel"
+AGE_PROTO = "./ai_models/age_deploy.prototxt"
+GENDER_MODEL = "./ai_models/gender_net.caffemodel"
+GENDER_PROTO = "./ai_models/gender_deploy.prototxt"
 
 # Load networks
 age_net = cv2.dnn.readNetFromCaffe(AGE_PROTO, AGE_MODEL)
