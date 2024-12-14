@@ -61,8 +61,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'student_profile.urls'
 
-MEDIA_URL = '/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/')
+# MEDIA_URL = '/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, '/')
+
+MEDIA_URL = '/media/'  # URL prefix for media files
+MEDIA_ROOT = BASE_DIR / "media"  # Directory to store uploaded files
 
 TEMPLATES = [
     {
