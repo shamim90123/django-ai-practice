@@ -131,3 +131,4 @@ Would you like me to add specific sections or generate a `LICENSE` file?
 7. Face Recognition = done
 8. Age and Gender Prediction = done
 9. live camera for face recognition, age, gender = to do
+10. GraphQL basic implementation  = done 

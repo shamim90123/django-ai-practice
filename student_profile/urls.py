@@ -4,6 +4,7 @@ from django.contrib.auth import views as auth_views
 from profiles import views  # Assuming the home page is in the profiles app
 from django.conf import settings
 from django.conf.urls.static import static
+from graphene_django.views import GraphQLView
 
 urlpatterns = [
     path('', auth_views.LoginView.as_view(), name='login'),  # Login page
@@ -19,6 +20,7 @@ urlpatterns = [
     path('sentiment/', views.sentiment_view, name='sentiment'),
     path('recognize-face/', views.recognize_face, name='recognize_face'),
     path('recognize-age-gender/', views.recognize_age_gender, name='recognize_age_gender'),
+    path("graphql/", GraphQLView.as_view(graphiql=True)),
 ]
 
 if settings.DEBUG:
