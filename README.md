@@ -123,7 +123,7 @@ Copy code
 Would you like me to add specific sections or generate a `LICENSE` file?
 
 1. authentication = done
-2. authorization = 90% done
+2. authorization = ongoing
 3. crud  = done
 4. responsive = done
 5. redesign as large application = ongoing

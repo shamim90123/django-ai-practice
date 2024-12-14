@@ -190,7 +190,9 @@
         <div class="sidebar" id="sidebar">
             <ul>
                 <li><a href="{% url 'home' %}"><i class="bi bi-house-door"></i> Home</a></li>
-                <li><a href="{% url 'university_list' %}"><i class="bi bi-book"></i> University List</a></li>
+                {% comment %} {% if request.user.has_perm('app_name.view_university') %} {% endcomment %}
+                    <li><a href="{% url 'university_list' %}"><i class="bi bi-book"></i> University List</a></li>
+                {% comment %} {% endif %} {% endcomment %}
                 <li><a href="{% url 'about' %}"><i class="bi bi-info-circle"></i> About</a></li>
                 <li><a href="/sentiment/"><i class="bi bi-chat-left-text-fill"></i> Sentiment Analysis </a></li>
                 <li><a href="/recognize-face/"><i class="bi bi-person-circle"></i> Face Detection</a></li>
