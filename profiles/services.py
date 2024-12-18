@@ -108,16 +108,14 @@ class WebScrapingService:
             # Open and read the file
             with open(file_path, 'r', encoding='utf-8') as html_file:
                 content = html_file.read()
-
-            # Use BeautifulSoup to parse the HTML
-            soup = BeautifulSoup(content, 'html.parser')
-
-            # Example: Extract all <h1> tags
-            h1_tags = [tag.text for tag in soup.find_all('h1')]
+                
+                soup = BeautifulSoup(content, 'html.parser')
+                
+                soup.prettify()
 
             return {
                 "status": "success",
-                "h1_tags": h1_tags,
+                "h1_tags": content,
             }
 
         except FileNotFoundError:
