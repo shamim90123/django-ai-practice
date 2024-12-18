@@ -21,6 +21,7 @@ urlpatterns = [
     path('recognize-face/', views.recognize_face, name='recognize_face'),
     path('recognize-age-gender/', views.recognize_age_gender, name='recognize_age_gender'),
     path("graphql/", GraphQLView.as_view(graphiql=True)),
+    path("web-scraping/", views.web_scraping, name="web_scraping"),
 ]
 
 if settings.DEBUG:

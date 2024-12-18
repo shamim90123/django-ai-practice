@@ -116,3 +116,6 @@ def recognize_age_gender(request):
         form = AgeGenderPrediction()
 
     return render(request, "age_gender.html", {"form": form})
+
+def web_scraping(request):
+    return render(request, 'web_scraping.html')  # Adjust path as necessary
