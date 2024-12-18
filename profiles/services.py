@@ -2,6 +2,9 @@ import face_recognition
 import numpy as np
 from .models import StudentProfile
 import cv2
+from bs4 import BeautifulSoup
+import os
+from django.conf import settings  # Import Django settings
 
 
 # age gender prediction start here
@@ -80,3 +83,45 @@ class AgeGenderPredictionService:
         age = AGE_RANGES[age_preds[0].argmax()]
 
         return {"age": age, "gender": gender}
+    
+class WebScrapingService:
+    @staticmethod
+    def web_scrap(file_name):
+        """
+        Get the title of a web page.
+
+        Args:
+            url (str): URL of the web page.
+
+        Returns:
+            str: Title of the web page.
+        """
+     
+        # with open('web_scraping_page.html') as html_file:
+        #     content = html_file.read()
+        #     print(content)
+        # Get the file's absolute path
+        #file_path = os.path.join(os.path.dirname(__file__), "../templates", file_name)
+        file_path = os.path.join(settings.BASE_DIR, "profiles/templates", file_name)
+
+        try:
+            # Open and read the file
+            with open(file_path, 'r', encoding='utf-8') as html_file:
+                content = html_file.read()
+
+            # Use BeautifulSoup to parse the HTML
+            soup = BeautifulSoup(content, 'html.parser')
+
+            # Example: Extract all <h1> tags
+            h1_tags = [tag.text for tag in soup.find_all('h1')]
+
+            return {
+                "status": "success",
+                "h1_tags": h1_tags,
+            }
+
+        except FileNotFoundError:
+            return {
+                "status": "error",
+                "message": f"File {file_path} not found.",
+            }

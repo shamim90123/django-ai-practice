@@ -4,6 +4,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 import os
+from django.http import JsonResponse
 
 from .utils import analyze_sentiment
 from .models import University
@@ -11,6 +12,7 @@ from .forms import AgeGenderPrediction
 from .forms import UniversityForm
 from .services import AgeGenderPredictionService
 from .services import FaceRecognitionService
+from .services import WebScrapingService
 
 
 @login_required
@@ -118,4 +120,8 @@ def recognize_age_gender(request):
     return render(request, "age_gender.html", {"form": form})
 
 def web_scraping(request):
-    return render(request, 'web_scraping.html')  # Adjust path as necessary
+     # Call the web scraping service and get the result
+    result = WebScrapingService.web_scrap('web_scraping_page.html')
+
+    # Return the result as a JSON response
+    return JsonResponse(result)

@@ -7,7 +7,14 @@
   <h1> Web Scraping Page </h1>
 
   <py-script>
-    print("Hello World")
+
+    from bs4 import BeautifulSoup
+
+    with open('web_scraping_page.html') as html_file:
+      content = html_file.read()
+      print(content)
+
+
   </py-script>
 
 
