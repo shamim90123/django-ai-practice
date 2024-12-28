@@ -9,6 +9,14 @@ A web application built with Django for managing student profiles, including log
 - Sidebar Navigation with fixed header
 - Responsive design for all devices
 - MySQL database integration
+- authorization
+- crud
+- redesign as large application
+- Sentiment Analysis = done
+- Face Recognition = done
+- Age and Gender Prediction = done
+- GraphQL basic implementation 
+- django isolated project through venv
 
 ---
 
@@ -31,6 +39,9 @@ Ensure you have the following installed:
    git clone https://github.com/yourusername/student-profile.git
    cd student-profile
 Set up a virtual environment (optional but recommended):
+
+### run the requirements
+    pip install -r /path/to/requirements.txt
 
 bash
 
@@ -74,8 +85,7 @@ Login page: http://127.0.0.1:8000/
 Admin panel: http://127.0.0.1:8000/admin/
 Usage
 Login: Use the default login page at / to access the application.
-Admin Panel: Add student details, manage users, and customize data.
-Dynamic Sidebar: Navigate to different sections such as "Home" and "About".
+
 Built With
 Backend: Django (Python)
 Database: MySQL
@@ -83,6 +93,7 @@ Frontend: HTML, CSS (with custom styles)
 Folder Structure
 csharp
 Copy code
+
 student-profile/
 ├── student_profile/         # Main project folder
 │   ├── settings.py          # Django settings
@@ -102,25 +113,16 @@ student-profile/
 Contributing
 Feel free to submit issues, fork the repository, and create pull requests. All contributions are welcome!
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 Author
-Developed by Your Name
-Contact: your.email@example.com
+Developed by MD Shamim Reza
+Contact: opt.shamim@gmail.com
 
 yaml
 Copy code
 
 ---
 
-### **How to Customize**
-
-1. Replace placeholder values (like `your_username`, `your.email@example.com`, and repository URL).
-2. Include details about any additional features or configurations specific to your project.
-3. Add screenshots or GIFs of the application for better clarity.
-
-Would you like me to add specific sections or generate a `LICENSE` file?
+### ** Features**
 
 1. authentication = done
 2. authorization = ongoing
@@ -133,3 +135,6 @@ Would you like me to add specific sections or generate a `LICENSE` file?
 9. live camera for face recognition, age, gender = to do
 10. GraphQL basic implementation  = done 
 11. django isolated project through venv = done 
+
+
+## screen shot
