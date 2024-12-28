@@ -92,49 +92,10 @@ Database: MySQL
 Frontend: HTML, CSS (with custom styles)
 Folder Structure
 csharp
-Copy code
 
-student-profile/
-├── student_profile/         # Main project folder
-│   ├── settings.py          # Django settings
-│   ├── urls.py              # Project URLs
-│   └── wsgi.py              # WSGI entry point
-├── profiles/                # App for student profiles
-│   ├── models.py            # Database models
-│   ├── views.py             # View functions
-│   ├── urls.py              # App-specific URLs
-│   ├── templates/           # HTML templates
-│   │   └── base.html        # Base layout
-│   └── static/              # Static files (CSS, JS, images)
-├── db.sqlite3               # SQLite database (if used as a fallback)
-├── manage.py                # Django management script
-├── requirements.txt         # Python dependencies
-└── README.md                # Project overview
 Contributing
 Feel free to submit issues, fork the repository, and create pull requests. All contributions are welcome!
 
 Author
 Developed by MD Shamim Reza
 Contact: opt.shamim@gmail.com
-
-yaml
-Copy code
-
----
-
-### ** Features**
-
-1. authentication = done
-2. authorization = ongoing
-3. crud  = done
-4. responsive = done
-5. redesign as large application = ongoing
-6. Sentiment Analysis = done
-7. Face Recognition = done
-8. Age and Gender Prediction = done
-9. live camera for face recognition, age, gender = to do
-10. GraphQL basic implementation  = done 
-11. django isolated project through venv = done 
-
-
-## screen shot
