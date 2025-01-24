@@ -1,4 +1,4 @@
-# AI Practice Project
+# Django, AI Practice Project
 
 A web application built with Django for managing student profiles, including login/logout functionality, an admin interface, and a dynamic menu with a fixed sidebar.
 
