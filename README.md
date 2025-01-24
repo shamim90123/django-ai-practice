@@ -55,38 +55,37 @@ pip install -r requirements.txt
 Set up the database:
 
 Create a MySQL database (e.g., student_profile).
-Update the DATABASES section in settings.py:
-python
-Copy code
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'student_profile',
-        'USER': 'your_username',
-        'PASSWORD': 'your_password',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+### Update the DATABASES section in settings.py:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'student_profile',
+            'USER': 'your_username',
+            'PASSWORD': 'your_password',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+        }
     }
-}
-Apply migrations:
 
-bash
+### Apply migrations:
 
-python manage.py makemigrations
-python manage.py migrate
-Run the development server:
+## run the code in bash
+    python manage.py makemigrations
+    python manage.py migrate
 
-bash
+## Run the development server:
+    python manage.py runserver
 
-python manage.py runserver
-Open the application in your browser:
+## Open the application in your browser:
 
 Login page: http://127.0.0.1:8000/
 Admin panel: http://127.0.0.1:8000/admin/
-Usage
+
+### Usage
 Login: Use the default login page at / to access the application.
 
-Built With
+## Technologies Used
 Backend: Django (Python)
 Database: MySQL
 Frontend: HTML, CSS (with custom styles)
