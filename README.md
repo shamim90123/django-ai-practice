@@ -82,9 +82,6 @@ Create a MySQL database (e.g., student_profile).
 Login page: http://127.0.0.1:8000/
 Admin panel: http://127.0.0.1:8000/admin/
 
-### Usage
-Login: Use the default login page at / to access the application.
-
 ## Technologies Used
 Backend: Django (Python)
 Database: MySQL
@@ -92,17 +89,15 @@ Frontend: HTML, CSS (with custom styles)
 - **Python**
 - **Django**
 - **MySQL**
-- **HTML**
-- **CSS**
 - **Bootstrap 5**
 - **Bootstrap icon**
 
-Contributing
-Feel free to submit issues, fork the repository, and create pull requests. All contributions are welcome!
+### Contributing
+- **Feel free to submit issues, fork the repository, and create pull requests. All contributions are welcome!**
 
-Author
-Developed by MD Shamim Reza
-Contact: opt.shamim@gmail.com
+### Author
+ Developed by MD Shamim Reza
+ Contact: opt.shamim@gmail.com
 
 ### Screen Shot
 <img src="/project_screen_shot.png" width="300" alt="Screenshot">
