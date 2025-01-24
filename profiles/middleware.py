@@ -51,5 +51,6 @@ class LoginRedirectMiddleware:
         if not request.user.is_authenticated and request.path not in allowed_urls:
             return redirect('/')  # Redirect to the base URL if not logged in and trying to access restricted pages
 
+
         # Continue with the normal request-response cycle
         return self.get_response(request)
