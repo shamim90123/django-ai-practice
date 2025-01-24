@@ -12,9 +12,9 @@ A web application built with Django for managing student profiles, including log
 - authorization
 - crud
 - redesign as large application
-- Sentiment Analysis = done
-- Face Recognition = done
-- Age and Gender Prediction = done
+- Sentiment Analysis
+- Face Recognition
+- Age and Gender Prediction
 - GraphQL basic implementation 
 - django isolated project through venv
 
