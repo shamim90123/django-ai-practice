@@ -42,19 +42,17 @@ Set up a virtual environment (optional but recommended):
 
 ### run the requirements
     pip install -r /path/to/requirements.txt
+### run the virtual environment
+    python -m venv venv
+    source venv/bin/activate    # On Linux/Mac
+    venv\Scripts\activate       # On Windows
 
-bash
+## Install dependencies:
+    pip install -r requirements.txt
 
-python -m venv venv
-source venv/bin/activate    # On Linux/Mac
-venv\Scripts\activate       # On Windows
-Install dependencies:
+## Set up the database:
+    Create a MySQL database (e.g., student_profile).
 
-bash
-pip install -r requirements.txt
-Set up the database:
-
-Create a MySQL database (e.g., student_profile).
 ### Update the DATABASES section in settings.py:
 
     DATABASES = {
@@ -96,8 +94,8 @@ Frontend: HTML, CSS (with custom styles)
 - **Feel free to submit issues, fork the repository, and create pull requests. All contributions are welcome!**
 
 ### Author
- Developed by MD Shamim Reza
- Contact: opt.shamim@gmail.com
+- **MD Shamim Reza**
+- **opt.shamim@gmail.com**
 
 ### Screen Shot
 <img src="/project_screen_shot.png" width="300" alt="Screenshot">
