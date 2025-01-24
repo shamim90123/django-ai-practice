@@ -89,8 +89,13 @@ Login: Use the default login page at / to access the application.
 Backend: Django (Python)
 Database: MySQL
 Frontend: HTML, CSS (with custom styles)
-Folder Structure
-csharp
+- **Python**
+- **Django**
+- **MySQL**
+- **HTML**
+- **CSS**
+- **Bootstrap 5**
+- **Bootstrap icon**
 
 Contributing
 Feel free to submit issues, fork the repository, and create pull requests. All contributions are welcome!
