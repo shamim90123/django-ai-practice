@@ -76,9 +76,8 @@ Set up a virtual environment (optional but recommended):
     python manage.py runserver
 
 ## Open the application in your browser:
-
-Login page: http://127.0.0.1:8000/
-Admin panel: http://127.0.0.1:8000/admin/
+    Login page: http://127.0.0.1:8000/
+    Admin panel: http://127.0.0.1:8000/admin/
 
 ## Technologies Used
 Backend: Django (Python)
