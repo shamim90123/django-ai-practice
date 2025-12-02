@@ -40,6 +40,7 @@ Ensure you have the following installed:
    cd student-profile
 Set up a virtual environment (optional but recommended):
  
+
  
 ### run the requirements
     pip install -r /path/to/requirements.txt
