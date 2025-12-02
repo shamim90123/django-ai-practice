@@ -1,8 +1,8 @@
-venv/
+myenv/
 
 # Ignore Python bytecode files
 __pycache__/
 */__pycache__/
 *.pyc
 .idea/
-venv-*/
+myenv-*/

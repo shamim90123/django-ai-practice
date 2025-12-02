@@ -39,7 +39,8 @@ Ensure you have the following installed:
    git clone https://github.com/yourusername/student-profile.git
    cd student-profile
 Set up a virtual environment (optional but recommended):
-
+ 
+ 
 ### run the requirements
     pip install -r /path/to/requirements.txt
 ### run the virtual environment
@@ -59,8 +60,8 @@ Set up a virtual environment (optional but recommended):
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'student_profile',
-            'USER': 'your_username',
-            'PASSWORD': 'your_password',
+            'USER': 'root',
+            'PASSWORD': 'shamim@901',
             'HOST': '127.0.0.1',
             'PORT': '3306',
         }
